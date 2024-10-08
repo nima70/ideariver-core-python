@@ -8,7 +8,7 @@ setup(
     long_description_content_type="text/markdown",  # README format
     author="ideariver",                    # Organization name
     author_email="contact@ideariver.com",  # Contact email
-    url="https://github.com/ideariver/ideariver-core-python",  # URL to your project repo
+    url="https://github.com/nima70/ideariver-core-python",  # URL to your project repo
     packages=find_packages(),              # Automatically find packages (inside ideariver_core)
     classifiers=[                          # Metadata for the project
         "Programming Language :: Python :: 3",
