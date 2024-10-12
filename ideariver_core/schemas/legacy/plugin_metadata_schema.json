@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Plugin Metadata Schema",
+  "type": "object",
+  "properties": {
+    "nameTag": {
+      "type": "string",
+      "description": "Unique identifier for the plugin"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the plugin, following semantic versioning"
+    },
+    "executableFile": {
+      "type": "string",
+      "description": "Path to the main executable file for the plugin"
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Author's full name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Author's email address"
+        }
+      },
+      "required": ["name", "email"]
+    },
+    "inputs": {
+      "type": "object",
+      "description": "Input validation schema for the plugin",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "type": "object",
+      "description": "Output structure for the plugin",
+      "additionalProperties": true
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the plugin's functionality"
+    }
+  },
+  "required": [
+    "nameTag",
+    "version",
+    "executableFile",
+    "author",
+    "inputs",
+    "description"
+  ]
+}

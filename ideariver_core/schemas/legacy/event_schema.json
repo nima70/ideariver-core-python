@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Event Sourcing Schema",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Unique identifier for the event"
+    },
+    "aggregate_id": {
+      "type": "string",
+      "description": "ID of the entity (aggregate) that this event relates to"
+    },
+    "aggregate_type": {
+      "type": "string",
+      "description": "Type of the aggregate, e.g., 'plugin', 'user', etc."
+    },
+    "version": {
+      "type": "integer",
+      "description": "Version of the aggregate's state after this event",
+      "default": 1
+    },
+    "event_type": {
+      "type": "string",
+      "description": "Type of the event, e.g., 'PLUGIN_RUN', 'USER_ACTION'"
+    },
+    "event_schema_version": {
+      "type": "string",
+      "description": "Version of the event schema",
+      "default": "1.0"
+    },
+    "source": {
+      "type": "string",
+      "description": "Origin or source of the event, typically the service name"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp for when the event occurred"
+    },
+    "payload": {
+      "type": "object",
+      "description": "Data related to the event, this varies depending on event type",
+      "additionalProperties": true
+    },
+    "user_id": {
+      "type": "string",
+      "description": "ID of the user initiating the event"
+    }
+  },
+  "required": [
+    "event_id",
+    "aggregate_id",
+    "version",
+    "event_type",
+    "timestamp",
+    "payload",
+    "source",
+    "event_schema_version"
+  ]
+}

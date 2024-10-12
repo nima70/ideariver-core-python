@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Topic Mapping API
+  version: 1.0.0
+
+components:
+  schemas:
+    TopicMapping:
+      type: object
+      properties:
+        topics:
+          type: object
+          properties:
+            taskQueue:
+              type: string
+              description: "The queue where tasks are submitted"
+            responseQueue:
+              type: string
+              description: "The queue where responses to tasks are sent"
+      required:
+        - topics
