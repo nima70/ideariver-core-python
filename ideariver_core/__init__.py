@@ -1,6 +1,15 @@
-# Import BasePlugin so that users can import it directly from the package
+# Import BasePlugin so that users can access it directly from the package
 from .base_plugin import BasePlugin
 
-# Import the OpenAPI-generated models and APIs
-from schemas.generated.python.plugin_metadata.openapi_client.models.plugin_metadata import PluginMetadata
-from schemas.generated.python.plugin_metadata.openapi_client.models.plugin_metadata_author import PluginMetadataAuthor
+# Import the OpenAPI-generated models and APIs for convenient access
+from .plugin_metadata import PluginMetadata, Author
+from .topic_mapping import TopicMapping, Topics
+
+# Define what will be available when importing the package
+__all__ = [
+    "BasePlugin",
+    "PluginMetadata",
+    "Author",
+    "TopicMapping",
+    "Topics"
+]
