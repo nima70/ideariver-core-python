@@ -1,5 +1,5 @@
-from dataclasses import dataclass, field
-from typing import Optional, Dict, List
+from dataclasses import dataclass
+from typing import Dict, List, Optional
 from uuid import UUID
 from datetime import datetime
 
@@ -12,16 +12,17 @@ class Author:
 @dataclass
 class PluginMetadata:
     """Represents the metadata for a plugin."""
+
     id: UUID
     version: str
     executableFile: str
     author: Author
     inputs: Dict[str, Optional[str]]
-    outputs: Optional[Dict[str, Optional[str]]] = field(default_factory=dict)
+    outputs: Dict[str, Optional[str]]
     description: str
-    status: str  # Must be one of ['active', 'deprecated', 'pending']
+    status: str  # Should be one of ['active', 'deprecated', 'pending']
     createdAt: datetime
     updatedAt: datetime
-    tags: Optional[List[str]] = field(default_factory=list)
-    thumbnailUrl: Optional[str] = None
-    imageUrls: Optional[List[str]] = field(default_factory=list)
+    tags: List[str]
+    thumbnailUrl: str
+    imageUrls: List[str]
