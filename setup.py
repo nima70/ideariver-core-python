@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ideariver_core",                # Name of the package to be published on PyPI
-    version="0.1.3",                      # Version of the package
+    version="0.1.4",                      # Version of the package
     description="Core library for ideariver, containing abstract DTOs and interfaces.",  # Short description
     long_description=open("README.md").read(),  # Read the long description from the README
     long_description_content_type="text/markdown",  # README format
