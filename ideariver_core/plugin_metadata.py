@@ -14,9 +14,12 @@ class PluginMetadata:
     """Represents the metadata for a plugin."""
 
     id: UUID
+    title: str  # The name or title of the plugin
+    nameTag: str  # Short, unique tag to identify the plugin
     version: str
     executableFile: str
     author: Author
+    codeLang: str  # Short identifier for the programming language used
     inputs: Dict[str, Optional[str]]
     outputs: Dict[str, Optional[str]]
     description: str

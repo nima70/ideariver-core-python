@@ -17,14 +17,14 @@ class BasePlugin(ABC):
         pass
 
     @abstractmethod
-    def run(self, input_data):
+    async def run(self, input_data):
         """
-        Execute the plugin's logic.
+        Execute the plugin's logic asynchronously.
         
         Args:
             input_data (dict): Data to be processed by the plugin.
             
         Returns:
-            str: Result after processing.
+            dict: Result after processing.
         """
         pass
